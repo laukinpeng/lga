@@ -1,13 +1,122 @@
 body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.article-list {
+  /* max-width: 50em; */
+  margin-top: 1em;
+}
+
+.article-item {
+  display: flex;
+  border: 1px solid #ddd;
+  margin: 1em;
+  padding: 1.5em;
+  border-radius: 0.8em;
+  box-shadow: 0 0 1em rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+.top-main {
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
+}
+
+.fg-3 {
+  flex-grow: 3;
+}
+
+.fg-1 {
+  flex-grow: 1;
+}
+
+
+
+.author-avatar {
+  max-width: 3em;
+  max-height: 3em;
+}
+
+.mg-1 {
+  margin: 1em;
+}
+
+.ml-1 {
+  margin-left: 1em;
+}
+
+.mb-1 {
+  margin-bottom: 1em;
+}
+
+.mb-05 {
+  margin-bottom: 0.5em;
+}
+
+.gap-1 {
+  gap: 1em
+}
+
+.article-details {
+  flex: 1;
+}
+
+.display-flex {
+  display: flex;
+}
+
+.fd-r-summary {
+  flex-direction: row;
+}
+
+@media only screen and (max-width: 600px) {
+  .fd-r-summary {
+    flex-direction: column;
+  }
+}
+
+.post-id {
+  font-size: 14px;
+  color: #888;
+}
+
+.author-name {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.post-title {
+  font-size: 24px;
+}
+
+.publish-date {
+  font-size: 14px;
+  color: #555;
+}
+
+.post-summary {
+  font-size: 16px;
+  color: #666;
+}
+
+.category-list {
+  margin-top: 10px;
+}
+
+.category-badge {
+  display: inline-block;
+  padding: 5px 10px;
+  background-color: #4CAF50;
+  color: #fff;
+  border-radius: 5px;
+  margin-right: 5px;
 }
