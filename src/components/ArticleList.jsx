@@ -40,7 +40,6 @@ export default function ArticleList({ post, filteredCategoryList, link }) {
           {post.categories.map((category) => (
             <div key={category.id}>
               {category.name}
-              {category.id}
             </div>
           ))}
         </div>

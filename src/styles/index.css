@@ -39,8 +39,6 @@ code {
   flex-grow: 1;
 }
 
-
-
 .author-avatar {
   max-width: 3em;
   max-height: 3em;
@@ -106,17 +104,4 @@ code {
 .post-summary {
   font-size: 16px;
   color: #666;
-}
-
-.category-list {
-  margin-top: 10px;
-}
-
-.category-badge {
-  display: inline-block;
-  padding: 5px 10px;
-  background-color: #4CAF50;
-  color: #fff;
-  border-radius: 5px;
-  margin-right: 5px;
 }
