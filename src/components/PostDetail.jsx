@@ -1,8 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useLocation, useParams } from 'react-router-dom';
+import ArticleList from './ArticleList';
 
 const PostDetail = () => {
   const { postId } = useParams();
+  const { search } = useLocation();
+  const queryParams = new URLSearchParams(search);
+  const categories = queryParams.get('categories');
 
   const [resultNotFound, setResultNotFound] = useState(null);
   const [post, setPost] = useState(null);
@@ -20,7 +24,7 @@ const PostDetail = () => {
         console.error(result.error);
         setResultNotFound(true);
       }
-      
+
       setPost(result.post);
     } catch (error) {
       console.error('Error fetching data:', error);
@@ -28,38 +32,10 @@ const PostDetail = () => {
   }, [postId]);
 
   return (
-    <>
+    <section>
       {resultNotFound == true ? <div>Post not found!</div> : null}
-      {post !== null ? (
-        <section className="article-list">
-          <div key={post.id} className="article-item">
-            <img
-              className="author-avatar"
-              src={post.author.avatar}
-              alt={post.author.name}
-            />
-            <div className="ml-1">
-              <div className="mb-1 post-id">Post ID: {post.id}</div>
-              <div className="mb-1 author-name">Author: {post.author.name}</div>
-              <h2 className="mb-05 post-title">{post.title}</h2>
-              <div className="mb-1 publish-date">
-                Published on {new Date(post.publishDate).toLocaleDateString()}
-              </div>
-              <div className="mb-1 post-summary">Summary: {post.summary}</div>
-              <div className="mb-1">Categories:</div>
-              <div className="display-flex gap-1 fd-r-summary">
-                {post.categories.map((category) => (
-                  <div key={category.id}>
-                    {category.name}
-                    {category.id}
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-      ) : null}
-    </>
+      {post !== null ? <ArticleList post={post} link={false} /> : null}
+    </section>
   );
 };
 
